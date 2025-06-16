@@ -1,0 +1,99 @@
+
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <title>La Chiave dell’Ombra</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&family=Roboto&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background-color: #ffffff;
+            color: #8b0000;
+            font-family: 'Playfair Display', serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .container {
+            background-color: #fff0f0;
+            padding: 50px;
+            border-radius: 12px;
+            box-shadow: 0 0 20px rgba(139, 0, 0, 0.2);
+            max-width: 600px;
+            text-align: center;
+            border: 2px solid #8b0000;
+        }
+        h1 {
+            font-size: 30px;
+            margin-bottom: 25px;
+            color: #8b0000;
+            font-family: 'Playfair Display', serif;
+        }
+        p {
+            font-size: 18px;
+            line-height: 1.6;
+            font-family: 'Roboto', sans-serif;
+        }
+        input[type="text"] {
+            padding: 12px;
+            width: 80%;
+            font-size: 16px;
+            border-radius: 6px;
+            border: 1px solid #8b0000;
+            margin-top: 25px;
+            background-color: #ffffff;
+            color: #8b0000;
+        }
+        button {
+            padding: 12px 28px;
+            margin-top: 20px;
+            font-size: 16px;
+            background-color: #8b0000;
+            color: #ffffff;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-weight: 600;
+        }
+        button:hover {
+            background-color: #a80000;
+        }
+        #response {
+            margin-top: 30px;
+            font-size: 18px;
+            font-weight: bold;
+            font-family: 'Roboto', sans-serif;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>La Chiave dell’Ombra</h1>
+        <p>
+            Mi trovi quando la luce non basta.<br>
+            Sono dietro ogni passo, ma non faccio rumore.<br>
+            Non parlo, ma ti seguo ovunque.<br><br>
+            Chi sono?
+        </p>
+        <input type="text" id="answer" placeholder="Scrivi la parola...">
+        <br>
+        <button onclick="checkAnswer()">Invia</button>
+        <div id="response"></div>
+    </div>
+    <script>
+        function checkAnswer() {
+            const userInput = document.getElementById("answer").value.toLowerCase().trim();
+            const responseBox = document.getElementById("response");
+            if (userInput === "ombra") {
+                responseBox.innerHTML = "ACCESSO APPROVATO<br>Mostra questa schermata all’hostess per entrare.<br>Hai visto ciò che ti accompagna da sempre.";
+                responseBox.style.color = "#006400";
+            } else {
+                responseBox.innerHTML = "ACCESSO NEGATO<br>Non è corretto. Rileggi l’indovinello, è più vicina di quanto pensi.";
+                responseBox.style.color = "#b30000";
+            }
+        }
+    </script>
+</body>
+</html>
